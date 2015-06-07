@@ -23,4 +23,4 @@ fi
 #set env var's
 source /etc/environment
 #clean up
-sudo rm *.tar.*
+sudo rm -f *.tar.*
