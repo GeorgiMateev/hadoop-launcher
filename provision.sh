@@ -24,3 +24,18 @@ fi
 source /etc/environment
 #clean up
 sudo rm -f *.tar.*
+
+sudo chown -R vagrant:vagrant $HADOOP_HOME
+
+ssh-keygen -t dsa -P '' -f ~/.ssh/id_dsa
+cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys
+export HADOOP\_PREFIX=$HADOOP_HOME
+
+sudo mkdir -p /hadoop/dfs/name
+sudo mkdir -p /hadoop/dfs/data
+
+sudo chown -R vagrant:vagrant /hadoop/dfs/name
+sudo chown -R vagrant:vagrant /hadoop/dfs/data
+
+sudo chmod -R 750 /hadoop/dfs/name
+sudo chmod -R 750 /hadoop/dfs/data

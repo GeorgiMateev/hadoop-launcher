@@ -1,24 +1,24 @@
 <configuration>
     <property>
         <name>fs.default.name</name>
-        <value>hdfs://node1:8020</value>
+        <value>hdfs://localhost:8020</value>
     </property>
 
 <!-- OOZIE proxy user settings
 A server based workflow engine optimized for running workflows that execute Hadoop jobs
  oozie can connect oozie -->
-    <property>
+    <!-- <property>
         <name>hadoop.proxyuser.oozie.hosts</name>
         <value>*</value>
     </property>
     <property>
         <name>hadoop.proxyuser.oozie.groups</name>
         <value>*</value>
-    </property>
+    </property> -->
 
 <!-- HTTPFS
 proxy user setting allows http connection -->
-    <property>
+    <!-- <property>
         <name>hadoop.proxyuser.httpfs.hosts</name>
         <value>*</value>
     </property>
@@ -40,5 +40,5 @@ proxy user setting allows http connection -->
             Defines the size of the edits log file that forces an urgent checkpoint even
             if the maximum checkpoint delay is not reached.
         </description>
-    </property>
+    </property> -->
 </configuration>

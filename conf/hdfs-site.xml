@@ -18,32 +18,32 @@ Safemode is an HDFS state in which the file system is mounted readonly -->
 on the local filesystem where the NameNode stores the namespace and transactions logs -->
     <property>
         <name>dfs.namenode.name.dir</name>
-        <value>/<hadoop-home>/dfs/name/</value>
-    </property><!-- 
-    <property>
+        <value>file:///hadoop/dfs/name/</value>
+    </property>
+    <!-- <property>
         <name>dfs.https.port</name>
         <value>50470</value>
         <description>The https port where namenode
         binds</description>
-    </property> -->
-    <!-- <property>
+    </property>
+     <property>
         <name>dfs.https.address</name>
         <value>node1:50470</value>
         <description>The https address where namenode binds</description>
-    </property> -->
-    <!-- <property>
+    </property>
+    <property>
         <name>dfs.secondary.http-address</name>
         <value>node2:50090</value>
         <description>Address of secondary namenode web server</description>
-    </property> -->
-    <!-- <property>
+    </property>
+    <property>
         <name>dfs.namenode.checkpoint.dir</name>
         <value>/<hadoop-home>/dfs/namesecondary/</value>
-    </property> -->
+    </property>-->
 <!-- paths
 on the local filesystem of a DataNode where it stores its blocks. -->
     <property>
         <name>dfs.data.dir</name>
-        <value>/<hadoop-home>/dfs/data/</value>
+        <value>file:///hadoop/dfs/data/</value>
     </property>
 </configuration>
