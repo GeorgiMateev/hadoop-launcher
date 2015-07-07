@@ -6,14 +6,14 @@
 <!-- Immediately
 exit safemode as soon as one DataNode checks in.
 Safemode is an HDFS state in which the file system is mounted readonly -->
-    <property>
+   <!--  <property>
         <name>dfs.safemode.extension</name>
         <value>0</value>
     </property>
     <property>
         <name>dfs.safemode.min.datanodes</name>
         <value>1</value>
-    </property>
+    </property> -->
 <!-- path
 on the local filesystem where the NameNode stores the namespace and transactions logs -->
     <property>
@@ -43,7 +43,7 @@ on the local filesystem where the NameNode stores the namespace and transactions
 <!-- paths
 on the local filesystem of a DataNode where it stores its blocks. -->
     <property>
-        <name>dfs.data.dir</name>
+        <name>dfs.datanode.data.dir</name>
         <value>file:///hadoop/dfs/data/</value>
     </property>
 </configuration>

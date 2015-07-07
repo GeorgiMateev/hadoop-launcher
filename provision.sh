@@ -1,3 +1,4 @@
+#install maven
 emptyString=""
 m="maven"
 if [[ $(ls /home/vagrant | grep "$m") == "$emptyString" ]]
@@ -8,11 +9,13 @@ if [[ $(ls /home/vagrant | grep "$m") == "$emptyString" ]]
         mv apache-maven-3.1.1 maven
 fi
 
+#install hadoop
 h="HADOOP_HOME"
 if [[ $(printenv | grep "$h") == "$emptyString" ]]
    then
 sudo sh -c "cat >> /etc/environment" << 'EOF'
 export HADOOP_HOME=/home/vagrant/hadoop-2.7.0
+export HADOOP_PREFIX=$HADOOP_HOME
 export MAVEN_HOME=/home/vagrant/maven
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre
 PATH=$PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin:$HADOOP_HOME/bin
@@ -22,14 +25,11 @@ fi
 
 #set env var's
 source /etc/environment
+
 #clean up
 sudo rm -f *.tar.*
 
 sudo chown -R vagrant:vagrant $HADOOP_HOME
-
-ssh-keygen -t dsa -P '' -f ~/.ssh/id_dsa
-cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys
-export HADOOP\_PREFIX=$HADOOP_HOME
 
 sudo mkdir -p /hadoop/dfs/name
 sudo mkdir -p /hadoop/dfs/data
